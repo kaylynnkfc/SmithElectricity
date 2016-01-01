@@ -1,0 +1,28 @@
+body {
+    padding: 0px 50px 50px 50px;
+}
+
+.col-sm-6 {
+/*    margin: 1px;*/
+}
+
+#slider {
+    visibility: hidden;
+}
+
+h5 {
+    padding:  5px 20px 0px 30px;
+    font-size: 13px;
+}
+
+h2, h4 {
+    color: #03437b
+}
+
+#header {
+    margin: 0px;
+}
+
+#buildings {
+    width: 70%;
+}

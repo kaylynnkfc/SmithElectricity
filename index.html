@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--  Kaylynn Crawford  -->
+<html>
+    <head>
+        <title>Smith Electricity</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src = "main.js"></script>
+        <script src = "data.js"></script>
+        <script src = "DataWrapper.js"></script>
+        <script src = "GameLoop.js"></script>
+        <script src = "CustomGameLoop.js"></script>
+        <script src = "GraphManager.js"></script>
+        <script src = "GraphElements.js"></script>
+        <script src = "PointerManager.js"></script>
+
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+
+
+    </head>
+    <body>
+        <div id = "header" class="page-header">
+
+            <h2>Smith Electricity Usage</h2>
+            <h5>
+                Visualization of electricity used by different Smith buildings.
+                Select the buildings you want to view and the amount of time
+                to view the data over and press submit.
+                The slider at the bottom allows you to see the change
+                over time.
+                Data available between 8/1/2012 and 10/1/2015.
+            </h5>
+
+        </div>
+        <div class="col-sm-3" name = "data">
+
+            <h4>View Change Over: </h4>
+            <input type="radio" name="timeScale" value="all">Since 2012<br>
+            <input type="radio" name="timeScale" value="year"
+                                    checked = true>Year<br>
+            <input type="radio" name="timeScale" value="month">Month<br>
+            <input type="radio" name="timeScale" value="day">Day <br>
+
+            <h4>Start Date: </h4><input type="date"
+                                  name="date" value = "2013-01-01">
+
+            <h4>Choose Buildings or Groups: </h4>
+            <select id="buildings" class="form-control"
+                    name="buildings[]" multiple size="8">
+                <option value='campus_center'>Campus Center</option>
+                <option value='ford'>Ford</option>
+                <option value='chapin_house'>Chapin House</option>
+                <option value='comstock_house'>Comstock House</option>
+                <option value='cushing_house'>Cushing House</option>
+                <option value='emerson_house'>Emerson House</option>
+                <option value='gardiner_house'>Gardiner House</option>
+                <option value='gillett_house'>Gillett House</option>
+                <option value='hopkins_house'>Hopkins House</option>
+                <option value='jordan_house'>Jordan House</option>
+                <option value='king_house'>King House</option>
+                <option value='lawrence_house'>Lawrence House</option>
+                <option value='morris_house'>Morris House</option>
+                <option value='morrow_house'>Morrow House</option>
+                <option value='northrop_house'>Northrop House</option>
+                <option value='park_house'>Park House</option>
+                <option value='scales_house'>Scales House</option>
+                <option value='tenney_house'>Tenney House</option>
+                <option value='wilder_house'>Wilder House</option>
+            </select>
+            <br>
+            <input type="button" name="Button" value="All"
+                   onclick="selectAll('buildings')" >
+            <input type="button" name="Button" value="Submit"
+                   onclick="buildGraph('buildings', 'timeScale', 'date')" >
+        </div>
+        <div class="col-sm-9" name = "canvas">
+            <canvas id="canvas"></canvas>
+            <input type="range" id="slider" value="1">
+        </div>
+
+    </body>
+</html>
